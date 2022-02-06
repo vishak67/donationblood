@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body style="background-color:rgb(178, 34, 34);">
+<h1> LOGIN TO BD TECH PVT LTD</h1>
+<form action="login" method="post">
+    {% csrf_token %}
+     <input type="text" name="username" placeholder="Enter your username" style="background-color:rgb(233, 150, 122)"><br>
+     <input type="password" name="password" placeholder="Enter your password" style="background-color:rgb(233, 150, 122)"><br>
+     <input type="submit" style="background-color:rgb(139, 0, 0)">
+      <button class="btn btn-danger" type="button" style="background-color:rgb(255, 127, 80)"><a href="{% url 'donationapp:register_form' %}"><b>Register</b></a></button>
+</form>
+</body>
+</html>

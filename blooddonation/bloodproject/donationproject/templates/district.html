@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+       {{ district.description|truncatewords:155 }}
+
+{% endblock %}
+{% block title %}
+   {% if center %}
+       {{ district.name }}-- BD CAMP
+   {% endif %}
+{% endblock %}
+{% block content %}
+<div>
+    <div>
+        <p><a href="{% url 'donationapp:allDistCen' %}">HOME</a>|<a href="{{district.center.get_url}}">{{district.center}}</a>|{{district.name}}</p>
+    </div>
+</div>
+<br>
+<div>
+    <div>
+        <div>
+            <img src="{{district.image.url}}" alt="{{district.name}}">
+        </div>
+    </div>
+<div>
+    <div>
+        <h1>{{district.name}}</h1>
+        <p>{{district.description}}</p>
+    </div>
+</div>
+</div>
+{% endblock %}

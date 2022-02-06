@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DONATION FORM</title>
+</head>
+<body style="background-color:rgb(178, 34, 34);">
+<h1><b>BLOOD DONATION FORM BY BD TECH PVT LTD </b></h1>
+<form action="form" method="post">
+    {% csrf_token %}
+         <input type="text" name="patient_name" placeholder="Enter your patient_name" style="background-color:rgb(233, 150, 122)"><br>
+         <input type="number" name="age" placeholder="Enter your age" style="background-color:rgb(233, 150, 122)"><br>
+         <input type="text" name="address" placeholder="Enter your address" style="background-color:rgb(233, 150, 122)"><br>
+         <input type="text" name="blood_group" placeholder="Enter your blood_group" style="background-color:rgb(233, 150, 122)"><br>
+    </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-6">
+
+                    <select class="select" style="background-color:rgb(233, 150, 122)">
+                      <option value="1" style="background-color:rgb(233, 150, 122)">district</option>
+                      <option value="2" style="background-color:rgb(233, 150, 122)">ERNAKULAM</option>
+                      <option value="3" style="background-color:rgb(233, 150, 122)">KANNUR</option>
+                      <option value="4" style="background-color:rgb(233, 150, 122)">KOTTAYAM</option>
+                      <option value="5" style="background-color:rgb(233, 150, 122)">KOZHIKODE</option>
+                      <option value="6" style="background-color:rgb(233, 150, 122)">THIRUVANANTHAPURAM</option>
+                      <option value="6" style="background-color:rgb(233, 150, 122)">THRISSUR</option>
+                    </select>
+
+                  </div>
+                  <div class="col-md-6 mb-4">
+
+                    <select class="select" style="background-color:rgb(233, 150, 122)">
+                      <option value="1" style="background-color:rgb(233, 150, 122)">center</option>
+                      <option value="2" style="background-color:rgb(233, 150, 122)">ER-ALUVA</option>
+                      <option value="3" style="background-color:rgb(233, 150, 122)">ER-VYTILA</option>
+                      <option value="4" style="background-color:rgb(233, 150, 122)">ER-EDAPALLY</option>
+                      <option value="5" style="background-color:rgb(233, 150, 122)">CNN-THALASSERY</option>
+                      <option value="6" style="background-color:rgb(233, 150, 122)">CNN-MUZAPPILANGAD</option>
+                      <option value="7" style="background-color:rgb(233, 150, 122)">CNN-PAYYANBALAM</option>
+                      <option value="8" style="background-color:rgb(233, 150, 122)">CNN-PARASSINIKADAM</option>
+                      <option value="9" style="background-color:rgb(233, 150, 122)">KT-PALA</option>
+                      <option value="10" style="background-color:rgb(233, 150, 122)">KT-ETTUMANUR</option>
+                      <option value="11" style="background-color:rgb(233, 150, 122)">KT-VAIKOM</option>
+                      <option value="12" style="background-color:rgb(233, 150, 122)">KT-THIRUNAKARA</option>
+                      <option value="13" style="background-color:rgb(233, 150, 122)">KOZ-SM.STREET</option>
+                      <option value="14" style="background-color:rgb(233, 150, 122)">KOZ-KAPPAD</option>
+                      <option value="15" style="background-color:rgb(233, 150, 122)">KOZ-BEYORE</option>
+                      <option value="16" style="background-color:rgb(233, 150, 122)">KOZ-MANANCHIRA</option>
+                      <option value="17" style="background-color:rgb(233, 150, 122)">TVPM-KOVALAM</option>
+                      <option value="19" style="background-color:rgb(233, 150, 122)">TVPM-ATTUKAL</option>
+                      <option value="20" style="background-color:rgb(233, 150, 122)">TVPM-VIZHINJAM</option>
+                      <option value="21" style="background-color:rgb(233, 150, 122)">TVPM-SHANGHUMUKHAM</option>
+                      <option value="22" style="background-color:rgb(233, 150, 122)">TCR-CHAVAKKAD</option>
+                      <option value="23" style="background-color:rgb(233, 150, 122)">TCR-GURUVAYUR</option>
+                      <option value="24" style="background-color:rgb(233, 150, 122)">TCR-CHALAKUDI</option>
+                      <option value="25" style="background-color:rgb(233, 150, 122)">TCR-KODUNGALLUR</option>
+                    </select>
+
+                  </div>
+                </div>
+    </div>
+
+              <button class="btn btn-danger" type="button" style="background-color:rgb(255, 127, 80)"><a href="{% url 'donationapp:donation_form' %}"><b>SUBMIT</b></a></button>
+               <p>please click<a href="{% url 'donationapp:allDistCen' %}">Here</a>go Home</p>
+              <button class="btn btn-danger" type="button" style="background-color:rgb(255, 127, 80)"><a href="{% url 'donationapp:logout_page' %}"><b>LOGOUT</b></a></button>
+
+
+
+</form>
+
+</body>
+</html>

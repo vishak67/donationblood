@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+
+
+</head>
+<body style="background-color:rgb(178, 34, 34);">
+<h1>REGISTRATION FOR BD TECH PVT LTD</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your username" style="background-color:rgb(233, 150, 122)"><br>
+    <input type="email" name="email" placeholder="Enter your email" style="background-color:rgb(233, 150, 122)"><br>
+    <input type="password" name="password" placeholder="Enter your password" style="background-color:rgb(233, 150, 122)"><br>
+    <input type="password" name="cnf_password" placeholder="Enter your password1" style="background-color:rgb(233, 150, 122)"><br>
+    <input type="submit" style="background-color:rgb(139, 0, 0)" href="{% url 'donationapp:login_page' %}"><br>
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>

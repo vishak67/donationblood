@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+   {% if center %}
+       {{ center.description|truncatewords:155 }}
+   {% else %}
+        Welcome to BD camp where you can donate blood for giving new life........
+   {% endif %}
+{% endblock %}
+{% block title %}
+   {% if center %}
+       {{ center.name }}--  CAMP
+   {% else %}
+         BLOOD_DONATION
+   {% endif %}
+{% endblock %}
+{% block content %}
+{% if center %}
+     <div>
+         <div>
+             <p><a href="{% url 'donationapp:allDistCen' %}"><b>OUR DONATION CENTERS</b></a></p>
+         </div>
+     </div>
+{% endif %}
+<div>
+    {% if center %}
+    <img src="{{center.image.url}}" alt="{{center.name}}" width="300px" height="300px">
+</div>
+   <br>
+<div>
+     <h1>{{center.name}}</h1>
+     <p>{{center.description}}</p>
+</div>
+    {% else %}
+<div>
+    <img src="{% static 'img/donation.jpg' %}" width="1325px">
+</div>
+<br>
+<div>
+    <h2>Our Collect Centers</h2>
+    <p><b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</b></p>
+</div>
+    {% endif %}
+<div>
+    <div>
+        {% for center in centers %}
+        <div>
+            <div>
+                <a href="{{center.get_url}}"><img src="{{center.image.url}}" alt="{{center.name}}" width="300" height="300"> </a>
+                <div>
+                    <h4>{{center.name}}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    <div class="container">
+        <button class="btn btn-danger" type="button"><a href="{% url 'donationapp:login_page' %}"><b>BLOOD BANK</b></a></button>
+    </div>
+{% endblock %}
